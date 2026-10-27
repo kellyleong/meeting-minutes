@@ -1,7 +1,7 @@
 ---
 name: meeting-minutes
 description: >-
-  Automatically turn uploaded or pasted meeting recordings, transcripts, and notes into agenda-based minutes, confirmed decisions, and action tracking. Use when a user supplies recognizable meeting audio/video or a meeting transcript, even without another instruction, or asks for 會議紀要、會議記錄、逐字稿整理、會後跟進、meeting minutes or action items. Supports renovation, construction, maintenance, procurement, costing, and general project/team meetings. Honor narrower explicit requests such as verbatim transcription, translation, or audio editing. Do not assume music, interviews, lectures, or unrelated audio are meetings.
+  Portable Agent Skill for WorkBuddy, ChatGPT, and Codex: turn uploaded or pasted meeting recordings, transcripts, and notes into agenda-based minutes, confirmed decisions, and action tracking. Use when a user supplies recognizable meeting audio/video or a meeting transcript, even without another instruction, or asks for 會議紀要、會議記錄、逐字稿整理、會後跟進、meeting minutes or action items. Supports renovation, construction, maintenance, procurement, costing, and general project/team meetings. Use available authorized transcription tools for recordings; process text without an audio dependency. Honor narrower requests such as verbatim transcription, translation, or audio editing. Do not assume music, interviews, lectures, or unrelated audio are meetings.
 ---
 
 # 會議紀要與任務跟進
@@ -9,6 +9,14 @@ description: >-
 將會議素材整理為可執行、可追溯的會議紀要，讓相關人員知道要做甚麼、由誰負責、何時交付、交給誰、需要甚麼前置條件，以及如何確認完成。
 
 預設用繁體中文；用戶明確要求英文時使用英文。保留項目名稱、編號、人名及必要的專業術語。按會議規模調整篇幅，避免重複表格及空泛摘要。
+
+## WorkBuddy 與跨平台執行
+
+- 以本檔的 name、description 及下列工作流作為共用技能定義，使用相對路徑讀取隨附參照。工作流不依賴 ChatGPT Library、OpenAI API 或任何固定工具名稱；agents/openai.yaml 僅保留為 OpenAI 宿主的選用設定，不當作 WorkBuddy 的安裝或啟用證據。
+- 在 WorkBuddy 使用用戶本次上傳、選取或明確授權的附件與任務工作目錄路徑。依宿主實際提供的檔案、文件及音訊能力執行，不假設另一平台的工具或路徑可用。
+- 技能須先在 WorkBuddy 安裝並啟用；啟用後依任務內容識別會議素材。自然語言呼叫可用「請使用 meeting-minutes 技能整理這份會議逐字稿」。不要將技能觸發描述成已建立背景監控或定時任務。
+- 文字逐字稿及筆記可直接整理。錄音先檢查可用的轉錄能力；若已安裝並可用 Local Whisper，可使用該技能取得逐字稿，再繼續本工作流。Local Whisper、語音模型及外部轉錄服務不包含於本技能，不假稱已安裝或可用。
+- 需要 WorkBuddy 安裝、啟用、專案目錄或音訊銜接說明時，讀取 [WorkBuddy 使用方式](references/workbuddy.md)。一般會議整理無須重複載入安裝說明。
 
 ## 1. 取得可用會議內容
 
