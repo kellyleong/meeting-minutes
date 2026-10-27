@@ -1,0 +1,7 @@
+interface:
+  display_name: "會議紀要與任務跟進"
+  short_description: "將會議錄音、逐字稿及筆記整理為按議程分類的紀要、任務分工與期限跟進表"
+  default_prompt: "使用 $meeting-minutes 整理已上傳的會議錄音或逐字稿，按議程輸出繁體中文會議紀要、行動跟進表及待確認事項。"
+
+policy:
+  allow_implicit_invocation: true
